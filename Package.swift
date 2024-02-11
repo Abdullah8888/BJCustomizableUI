@@ -28,7 +28,7 @@ let package = Package(
             resources: [
                 .copy("Resources/MImages.xcassets"),
                 //.copy("Resources/MyImages.bundle"),
-                .copy("Resources/Fonts")
+                .process("Resources/Fonts")
             ]),
         .testTarget(
             name: "BJCustomizableUITests",
