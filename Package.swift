@@ -24,10 +24,10 @@ let package = Package(
         .target(
             name: "BJCustomizableUI",
             path: "BJCustomizableUI",
-            exclude: ["Resources/Images", "Resources/MImages.xcassets"],
+            exclude: ["Resources/Images", "Resources/MyImages.bundle"],
             resources: [
-                //.copy("Resources/MImages.xcassets"),
-                .copy("Resources/MyImages.bundle"),
+                .copy("Resources/MImages.xcassets"),
+                //.copy("Resources/MyImages.bundle"),
                 .copy("Resources/Fonts")
             ]),
         .testTarget(
