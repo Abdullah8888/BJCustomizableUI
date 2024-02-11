@@ -119,7 +119,8 @@ public final class BJTextField: UIView {
     }
     
     private func setViewImage(iconPosition: IconPosition) {
-        icon.image = MyImage.getImage()
+        //icon.image = MyImage.getImage()
+        icon.image = MyImage3.getImage(name: "user-icon-2", type: "png")
         switch iconPosition {
         case .left:
             //field.leftView = iconContainer(icon: icon)
@@ -182,3 +183,70 @@ public class MyImage2 {
       return UIImage(named: "user-icon-2", in: bundle, compatibleWith: nil)
   }
 }
+
+public class MyImage3 {
+    
+    public static func getImage(name: String, type: String) -> UIImage? {
+        guard let path = Bundle.module.path(forResource: name, ofType: type),
+            let image = UIImage(contentsOfFile: path) else {
+            
+          print("not found")
+          return nil
+      }
+        print("image found")
+      return image
+  }
+}
+
+import class Foundation.Bundle
+
+private class BundleFinder {}
+
+//extension Foundation.Bundle {
+//    /// Returns the resource bundle associated with the current Swift module.
+//    static var module: Bundle = {
+//        let bundleName = "MyImages"
+//
+//        let candidates = [
+//            // Bundle should be present here when the package is linked into an App.
+//            Bundle.main.resourceURL,
+//
+//            // Bundle should be present here when the package is linked into a framework.
+//            Bundle(for: BundleFinder.self).resourceURL,
+//
+//            // For command-line tools.
+//            Bundle.main.bundleURL,
+//        ]
+//
+//        for candidate in candidates {
+//            let bundlePath = candidate?.appendingPathComponent(bundleName + ".bundle")
+//            if let bundle = bundlePath.flatMap(Bundle.init(url:)) {
+//                return bundle
+//            }
+//        }
+//        fatalError("unable to find bundle named BioSwift_BioSwift")
+//    }()
+//}
+
+
+//extension Image {
+//    init(packageResource name: String, ofType type: String) {
+//#if canImport(UIKit)
+//        guard let path = Bundle.module.path(forResource: name, ofType: type),
+//              let image = UIImage(contentsOfFile: path) else {
+//            self.init(name)
+//            return
+//        }
+//        self.init(uiImage: image)
+//#elseif canImport(AppKit)
+//        guard let path = Bundle.module.path(forResource: name, ofType: type),
+//              let image = NSImage(contentsOfFile: path) else {
+//            self.init(name)
+//            return
+//        }
+//        self.init(nsImage: image)
+//#else
+//        self.init(name)
+//#endif
+//    }
+//}

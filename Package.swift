@@ -25,8 +25,9 @@ let package = Package(
             name: "BJCustomizableUI",
             path: "BJCustomizableUI",
             resources: [
-                .copy("Resources/MImages.xcassets"),
-                .copy("Resources/Fonts"),
+                //.copy("Resources/MImages.xcassets"),
+                .copy("Resources/MImages.bundle"),
+                .copy("Resources/Fonts")
             ]),
         .testTarget(
             name: "BJCustomizableUITests",
