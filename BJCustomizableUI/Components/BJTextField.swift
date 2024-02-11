@@ -120,7 +120,8 @@ public final class BJTextField: UIView {
     
     private func setViewImage(iconPosition: IconPosition) {
         //icon.image = MyImage.getImage()
-        icon.image = MyImage3.getImage(name: "user-icon-2", type: "png")
+        //icon.image = MyImage3.getImage(name: "user-icon-2", type: "png")
+        icon.image = MyImage4.getImage(name: "user-icon-2")
         switch iconPosition {
         case .left:
             //field.leftView = iconContainer(icon: icon)
@@ -195,6 +196,20 @@ public class MyImage3 {
       }
         print("image found")
       return image
+  }
+}
+
+public class MyImage4 {
+    
+    public static func getImage(name: String) -> UIImage? {
+        
+        if let image = UIImage(named: name, in: Bundle.module, compatibleWith: nil) {
+            return image
+        }
+        else {
+            print("not found oo")
+            return nil
+        }
   }
 }
 
