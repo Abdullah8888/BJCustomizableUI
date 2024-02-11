@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIFont {
-    static func poppinsExtraBold(size: CGFloat = 14) -> UIFont { UIFont(name: "Poppins-ExtraBold", size: size)! }
+    static func poppinsExtraBold(size: CGFloat = 14) -> UIFont { UIFont(name: "Poppins-ExtraBold", size: size) ?? UIFont.systemFont(ofSize: size, weight: .bold) }
 }
 
 extension UIFont {
