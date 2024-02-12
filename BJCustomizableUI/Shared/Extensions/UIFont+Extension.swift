@@ -27,32 +27,32 @@ extension UIFont {
 
     static func jbs_registerFont(withFilenameString filenameString: String, bundle: Bundle) {
         print(" filename \(filenameString) bundle \(bundle)")
-//        guard let fontURL = bundle.url(forResource: "Poppins-ExtraBold", withExtension: "ttf"),
-//            let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
-//            let font = CGFont(fontDataProvider) else {
-//                fatalError("Couldn't create font from filename: Poppins-ExtraBold with extension .ttf")
-//        }
+        guard let fontURL = bundle.url(forResource: "Poppins-ExtraBold", withExtension: "ttf"),
+            let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
+            let font = CGFont(fontDataProvider) else {
+                fatalError("Couldn't create font from filename: Poppins-ExtraBold with extension .ttf")
+        }
         
-       guard let pathForResourceString = bundle.path(forResource: filenameString, ofType: nil) else {
-           print("UIFont+:  Failed to register font - path for resource not found.")
-           return
-       }
-
-       guard let fontData = NSData(contentsOfFile: pathForResourceString) else {
-           print("UIFont+:  Failed to register font - font data could not be loaded.")
-           return
-       }
-
-       guard let dataProvider = CGDataProvider(data: fontData) else {
-           print("UIFont+:  Failed to register font - data provider could not be loaded.")
-           return
-       }
-
-       guard let font = CGFont(dataProvider) else {
-           print("UIFont+:  Failed to register font - font could not be loaded.")
-           return
-       }
-        
+//       guard let pathForResourceString = bundle.path(forResource: filenameString, ofType: nil) else {
+//           print("UIFont+:  Failed to register font - path for resource not found.")
+//           return
+//       }
+//
+//       guard let fontData = NSData(contentsOfFile: pathForResourceString) else {
+//           print("UIFont+:  Failed to register font - font data could not be loaded.")
+//           return
+//       }
+//
+//       guard let dataProvider = CGDataProvider(data: fontData) else {
+//           print("UIFont+:  Failed to register font - data provider could not be loaded.")
+//           return
+//       }
+//
+//       guard let font = CGFont(dataProvider) else {
+//           print("UIFont+:  Failed to register font - font could not be loaded.")
+//           return
+//       }
+//
         
 
        var errorRef: Unmanaged<CFError>? = nil
